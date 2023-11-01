@@ -43,6 +43,12 @@ public class viewMarks extends JFrame implements ActionListener {
         add(addMarks);
 
 
+        ImageIcon i2=new ImageIcon(ClassLoader.getSystemResource("images/b22.jpg"));
+        JLabel i4 = new JLabel(i2);
+        i4.setBounds(0,0,1000,700);
+        add(i4);
+
+
         setLayout(null);
         setLocationRelativeTo(null);
         setVisible(true);

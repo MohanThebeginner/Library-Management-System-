@@ -18,11 +18,13 @@ public class login extends JFrame implements ActionListener {
         JLabel l1 = new JLabel("Username");
         l1.setBounds(60,80,150,50);
         l1.setFont(new Font("Tahoma", Font.BOLD, 20));
+        l1.setForeground(Color.lightGray);
         add(l1);
 
         JLabel l2 = new JLabel("Password");
         l2.setBounds(60,160, 150,50);
         l2.setFont(new Font("Tahoma", Font.BOLD, 20));
+        l2.setForeground(Color.lightGray);
         add(l2);
 
         username = new JTextField();
@@ -47,6 +49,12 @@ public class login extends JFrame implements ActionListener {
         cancel.setForeground(Color.white);
         cancel.addActionListener(this);
         add(cancel);
+
+
+        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/b15.jpg"));
+        JLabel i3 = new JLabel(i1);
+        i3.setBounds(0,0,600,400);
+        add(i3);
 
         setLayout(null);
         setLocationRelativeTo(null);

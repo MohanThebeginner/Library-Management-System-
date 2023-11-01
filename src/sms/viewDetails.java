@@ -12,22 +12,25 @@ public class viewDetails extends JFrame {
     JScrollPane sp1;
     JTable details;
     viewDetails(){
-        setSize(1000,700);
+        setSize(1600,600);
 
         sp1 = new JScrollPane();
-        sp1.setBounds(60,80,900,400);
+        sp1.setBounds(10,80,1500,400);
         add(sp1);
 
         details = new JTable();
-        details.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        details.setRowHeight(26);
+        details.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        details.setRowHeight(30);
         sp1.setViewportView(details);
 
         getDetails();
 
         JTableHeader tb1 = details.getTableHeader();
-        tb1.setFont(new Font("Tahoma", Font.BOLD, 22));
+        tb1.setFont(new Font("Tahoma", Font.BOLD, 16));
         tb1.setBackground(Color.cyan);
+
+
+
         setLayout(null);
         setLocationRelativeTo(null);
         setVisible(true);

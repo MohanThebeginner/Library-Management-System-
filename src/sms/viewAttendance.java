@@ -23,6 +23,7 @@ public class viewAttendance extends JFrame implements ActionListener {
         l1  = new JLabel("Attendance Section");
         l1.setBounds(280,50,400,100);
         l1.setFont(new Font("Tahoma", Font.ITALIC | Font.BOLD, 38));
+        l1.setForeground(Color.YELLOW);
         add(l1);
 
         chupaRustom = new JLabel("Defaulter List");
@@ -63,6 +64,17 @@ public class viewAttendance extends JFrame implements ActionListener {
         refresh.setFont(font);
         refresh.addActionListener(this);
         add(refresh);
+
+
+        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/gray.png"));
+        JLabel i3 = new JLabel(i1);
+        i3.setBounds(250,50,460,100);
+        add(i3);
+
+        ImageIcon i2=new ImageIcon(ClassLoader.getSystemResource("images/b2.jpg"));
+        JLabel i4 = new JLabel(i2);
+        i4.setBounds(0,0,1000,700);
+        add(i4);
 
         setLayout(null);
         setLocationRelativeTo(null);

@@ -28,36 +28,43 @@ public class addDetails extends JFrame implements ActionListener {
         JLabel l1  = new JLabel("Name");
         l1.setBounds(x,70,150,40);
         l1.setFont(font);
+        l1.setForeground(Color.lightGray);
         add(l1);
 
         JLabel l2  = new JLabel("Aadhar");
         l2.setBounds(x,130,150,40);
         l2.setFont(font);
+        l2.setForeground(Color.lightGray);
         add(l2);
 
         JLabel l3  = new JLabel("D.O.B");
         l3.setBounds(x,190,150,40);
         l3.setFont(font);
+        l3.setForeground(Color.lightGray);
         add(l3);
 
         JLabel l4  = new JLabel("Gender");
         l4.setBounds(x,250,150,40);
         l4.setFont(font);
+        l4.setForeground(Color.lightGray);
         add(l4);
 
         JLabel l5  = new JLabel("Address");
         l5.setBounds(x,310,150,40);
         l5.setFont(font);
+        l5.setForeground(Color.lightGray);
         add(l5);
 
         JLabel l6  = new JLabel("Phone No");
         l6.setBounds(x,370,150,40);
         l6.setFont(font);
+        l6.setForeground(Color.lightGray);
         add(l6);
 
         JLabel l7  = new JLabel("Blood Grp");
         l7.setBounds(x,430,150,40);
         l7.setFont(font);
+        l7.setForeground(Color.lightGray);
         add(l7);
 
 
@@ -116,6 +123,12 @@ public class addDetails extends JFrame implements ActionListener {
         add.setFont(font);
         add.addActionListener(this);
         add(add);
+
+
+        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/b9.jpg"));
+        JLabel i3 = new JLabel(i1);
+        i3.setBounds(0,0,600,700);
+        add(i3);
 
         setLayout(null);
         setLocationRelativeTo(null);

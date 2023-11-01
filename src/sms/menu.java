@@ -13,6 +13,7 @@ public class menu extends JFrame implements ActionListener {
     menu() {
         setSize(600, 600);
 
+
         addDetails = new JButton("ADD DETAILS");
         addDetails.setBounds(x, 80, 150, 50);
         addDetails.addActionListener(this);
@@ -37,6 +38,12 @@ public class menu extends JFrame implements ActionListener {
         addAttendance.setBounds(x, 400, 150, 50);
         addAttendance.addActionListener(this);
         add(addAttendance);
+
+
+        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/b7.jpg"));
+        JLabel i3 = new JLabel(i1);
+        i3.setBounds(0,0,650,700);
+        add(i3);
 
         setLayout(null);
         setLocationRelativeTo(null);

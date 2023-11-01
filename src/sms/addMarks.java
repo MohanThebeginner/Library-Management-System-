@@ -158,6 +158,11 @@ public class addMarks extends JFrame implements ActionListener {
         p2.add(update2);
 
 
+        ImageIcon i2=new ImageIcon(ClassLoader.getSystemResource("images/b8.jpg"));
+        JLabel i4 = new JLabel(i2);
+        i4.setBounds(0,0,650,800);
+        add(i4);
+
 
 
         setLayout(null);
