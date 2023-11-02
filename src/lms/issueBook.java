@@ -1,4 +1,4 @@
-package sms;
+package lms;
 
 import net.proteanit.sql.DbUtils;
 
@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
-public class viewAttendance extends JFrame implements ActionListener {
+public class issueBook extends JFrame implements ActionListener {
 
     JScrollPane sp1 ;
     JTable attendanceDetails ;
@@ -17,18 +17,19 @@ public class viewAttendance extends JFrame implements ActionListener {
     JButton addUpdate , defaulters , refresh;
 
     Font font = new Font("Tahoma", Font.PLAIN, 20);
-    viewAttendance(){
+    issueBook(){
         setSize(1000,700);
 
-        l1  = new JLabel("Attendance Section");
-        l1.setBounds(280,50,400,100);
+        l1  = new JLabel("BOOK SHOP");
+        l1.setBounds(400,50,400,100);
         l1.setFont(new Font("Tahoma", Font.ITALIC | Font.BOLD, 38));
         l1.setForeground(Color.YELLOW);
         add(l1);
 
-        chupaRustom = new JLabel("Defaulter List");
+        chupaRustom = new JLabel("Book List");
         chupaRustom.setBounds(400,150,150,50);
         chupaRustom.setFont(new Font("Tahoma", Font.ITALIC, 24));
+        chupaRustom.setForeground(Color.YELLOW);
         add(chupaRustom);
         chupaRustom.setVisible(false);
 
@@ -47,13 +48,13 @@ public class viewAttendance extends JFrame implements ActionListener {
 
         getDetails();
 
-        addUpdate = new JButton("Add / Update");
+        addUpdate = new JButton("Add Book");
         addUpdate.setBounds(60,200, 200,50);
         addUpdate.setFont(font);
         addUpdate.addActionListener(this);
         add(addUpdate);
 
-        defaulters = new JButton("Defaulters");
+        defaulters = new JButton("Display");
         defaulters.setBounds(60,350,200,50);
         defaulters.setFont(font);
         defaulters.addActionListener(this);
@@ -68,7 +69,7 @@ public class viewAttendance extends JFrame implements ActionListener {
 
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/gray.png"));
         JLabel i3 = new JLabel(i1);
-        i3.setBounds(250,50,460,100);
+        i3.setBounds(300,50,460,100);
         add(i3);
 
         ImageIcon i2=new ImageIcon(ClassLoader.getSystemResource("images/b2.jpg"));
@@ -83,11 +84,11 @@ public class viewAttendance extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource()==defaulters){
-            String cutoff =  JOptionPane.showInputDialog("Enter Defaulter CutOff");
+//            String cutoff =  JOptionPane.showInputDialog("Enter Defaulter CutOff");
             conn c = new conn();
-            String query2 = "select gr, name , attendance from stud_details where attendance < '"+cutoff+"';";
+            String query2 = "select Sr no, Name , Author from book_details  ";
             try {
-                ResultSet defaultersRs = c.s.executeQuery(query2);
+                ResultSet defaultersRs = c.l.executeQuery(query2);
                 attendanceDetails.setModel(DbUtils.resultSetToTableModel(defaultersRs));
                 chupaRustom.setVisible(true);
 
@@ -103,22 +104,22 @@ public class viewAttendance extends JFrame implements ActionListener {
         }
 
         if(ae.getSource()==addUpdate){
-            new addAttendance();
+            new buyBook();
             this.setVisible(false);
         }
     }
 
     void getDetails(){
         conn c = new conn();
-        String query = "select gr , name , attendance from stud_details;";
+        String query = "select Sr, Name , Author from book_details;";
         try{
-            ResultSet rs = c.s.executeQuery(query) ;
+            ResultSet rs = c.l.executeQuery(query) ;
             attendanceDetails.setModel(DbUtils.resultSetToTableModel(rs));
         }catch (Exception e){
             System.out.println(e);
         }
     }
     public static void main(String[] args) {
-        new viewAttendance();
+        new issueBook();
     }
 }

@@ -1,5 +1,4 @@
-package sms;
-import com.mysql.cj.protocol.Resultset;
+package lms;
 
 import javax.swing.*;
 import java.awt.*;
@@ -70,10 +69,10 @@ public class login extends JFrame implements ActionListener {
             conn c = new conn();
             String query = "select username,password from login where username = '"+username+"' and password = '"+password+"'";
             try{
-                ResultSet rs =  c.s.executeQuery(query);
+                ResultSet rs =  c.l.executeQuery(query);
                 if(rs.next()){
                     JOptionPane.showMessageDialog(null, "Login Successfull!");
-                    new menu();
+                    new trmenu();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Invalid Credentials!!");

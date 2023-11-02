@@ -1,6 +1,5 @@
-package sms;
+package lms;
 
-import com.mysql.cj.protocol.Resultset;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
@@ -40,9 +39,9 @@ public class viewDetails extends JFrame {
     void getDetails(){
 //        data fetching code
         conn c = new conn();
-        String query = "select * from stud_details";
+        String query = "select * from book_details";
         try{
-            ResultSet rs = c.s.executeQuery(query);
+            ResultSet rs = c.l.executeQuery(query);
             details.setModel(DbUtils.resultSetToTableModel(rs));
         }
         catch (Exception e){
