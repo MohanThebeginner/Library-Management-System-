@@ -17,7 +17,7 @@ public class RBooks extends JFrame implements ActionListener {
     Font font = new Font("Tahoma", Font.BOLD,20);
     Font fontTxt = new Font("Tahoma", Font.PLAIN,20);
 
-    JButton add,add2;
+    JButton add,add2,c2;
     JTextField bookname, bookno, author;
     RBooks(){
         setSize(600,320);
@@ -64,9 +64,11 @@ public class RBooks extends JFrame implements ActionListener {
 
         add2 = new JButton("CANCEL");
         add2.setBounds(100,220,120,50);
-        add2.setFont(font);
+        add2.setFont(new Font("Tahoma",Font.BOLD,15));
         add2.addActionListener(this);
         add(add2);
+
+
 
         setLayout(null);
         setLocationRelativeTo(null);
@@ -100,7 +102,9 @@ public class RBooks extends JFrame implements ActionListener {
         }
         if(ae.getSource()==add2){
             new trmenu();
+            setVisible(false);
         }
+
 
     }
 

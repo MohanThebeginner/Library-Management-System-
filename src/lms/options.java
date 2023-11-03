@@ -6,12 +6,12 @@ import java.awt.event.ActionListener;
 
 public class options extends JFrame implements ActionListener {
 
-    JButton issueBook, viewBook, returnBook;
+    JButton issueBook, viewBook, returnBook,logout;
 
     int x = 225;
 
     options() {
-        setSize(600, 400);
+        setSize(600, 500);
 
 
         issueBook = new JButton(" BOOK SHOP");
@@ -29,11 +29,14 @@ public class options extends JFrame implements ActionListener {
         returnBook.addActionListener(this);
         add(returnBook);
 
-
+        logout= new JButton("LOGOUT");
+        logout.setBounds(x, 320, 150, 50);
+        logout.addActionListener(this);
+        add(logout);
 
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/b7.jpg"));
         JLabel i3 = new JLabel(i1);
-        i3.setBounds(0,0,650,400);
+        i3.setBounds(0,0,650,500);
         add(i3);
 
         setLayout(null);
@@ -55,6 +58,11 @@ public class options extends JFrame implements ActionListener {
         }
         if (ae.getSource() == returnBook) {
             new returnBook();
+        }
+        if (ae.getSource() == logout) {
+            new starter();
+            setVisible(false);
+
         }
 
     }

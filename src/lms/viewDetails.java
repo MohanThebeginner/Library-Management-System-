@@ -5,11 +5,15 @@ import net.proteanit.sql.DbUtils;
 import javax.swing.*;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
-public class viewDetails extends JFrame {
+public class viewDetails extends JFrame implements ActionListener {
     JScrollPane sp1;
     JTable details;
+
+    JButton c2;
     viewDetails(){
         setSize(1600,600);
 
@@ -28,14 +32,25 @@ public class viewDetails extends JFrame {
         tb1.setFont(new Font("Tahoma", Font.BOLD, 16));
         tb1.setBackground(Color.cyan);
 
-
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/c3.png"));
+        Image img1 = i1.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(img1);
+        c2 = new JButton(i1);
+        c2.setBounds(0,0 , 50,50);
+        c2.addActionListener(this);
+        add(c2);
 
         setLayout(null);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getSource()==c2){
+            new options();
+            this.setVisible(false);
+        }
+    }
     void getDetails(){
 //        data fetching code
         conn c = new conn();
@@ -48,6 +63,8 @@ public class viewDetails extends JFrame {
             System.out.println(e);
         }
     }
+
+
 
     public static void main(String[] args) {
         new viewDetails();

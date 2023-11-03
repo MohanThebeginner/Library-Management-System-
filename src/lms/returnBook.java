@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 public class returnBook extends JFrame implements ActionListener {
     JLabel l1, l2;
     JTextField gr, name;
-    JButton display , submit, back;
+    JButton display , submit, c2;
     JScrollPane sp1;
     JTable details;
 
@@ -84,13 +84,13 @@ public class returnBook extends JFrame implements ActionListener {
         submit.setFont(f1);
         add(submit);
 
-//        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/back.png"));
-//        Image img1 = i1.getImage().getScaledInstance(75,50,Image.SCALE_DEFAULT);
-//        i1 = new ImageIcon(img1);
-//        back = new JButton(i1);
-//        back.setBounds(0,0 , 50,50);
-//        back.addActionListener(this);
-//        add(back);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/c3.png"));
+        Image img1 = i1.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(img1);
+        c2 = new JButton(i1);
+        c2.setBounds(0,0 , 50,50);
+        c2.addActionListener(this);
+        add(c2);
 
         setLayout(null);
         setLocationRelativeTo(null);
@@ -114,8 +114,7 @@ public class returnBook extends JFrame implements ActionListener {
         }
 
         if(ae.getSource()==submit) {
-//           String Issuedto = this.Issuedto.getText();
-//           String Dayleft = this.Dayleft.getText();
+
             String Name = this.name.getText();
 
 
@@ -135,8 +134,8 @@ public class returnBook extends JFrame implements ActionListener {
                 }
             }
 
-        if(ae.getSource()==back){
-            new issueBook();
+        if(ae.getSource()==c2){
+            new options();
             this.setVisible(false);
         }
 

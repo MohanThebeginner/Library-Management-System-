@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 public class AddQun extends JFrame implements ActionListener {
     JLabel l1, l2;
     JTextField gr, attendance;
-    JButton display , submit, back;
+    JButton display , submit, c2;
     JScrollPane sp1;
     JTable details;
 
@@ -69,6 +69,13 @@ public class AddQun extends JFrame implements ActionListener {
         submit.setFont(f1);
         add(submit);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/c3.png"));
+        Image img1 = i1.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(img1);
+        c2 = new JButton(i1);
+        c2.setBounds(0,0 , 50,50);
+        c2.addActionListener(this);
+        add(c2);
 
         setLayout(null);
         setLocationRelativeTo(null);
@@ -103,6 +110,11 @@ public class AddQun extends JFrame implements ActionListener {
             catch (Exception e){
                 System.out.println(e);
             }
+        }
+
+        if(ae.getSource()==c2){
+            new trmenu();
+            setVisible(false);
         }
 
 

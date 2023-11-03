@@ -21,7 +21,7 @@ public class IB extends JFrame implements ActionListener {
     Font font = new Font("Tahoma", Font.BOLD,14);
     Font fontTxt = new Font("Tahoma", Font.PLAIN,18);
     
-    JButton add,add2;
+    JButton add,add2,c2;
     JScrollPane sp1;
     JTable details;
 
@@ -48,6 +48,13 @@ public class IB extends JFrame implements ActionListener {
         tb1.setFont(new Font("Tahoma", Font.BOLD, 16));
         tb1.setBackground(Color.cyan);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/c3.png"));
+        Image img1 = i1.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(img1);
+        c2 = new JButton(i1);
+        c2.setBounds(0,0 , 50,50);
+        c2.addActionListener(this);
+        add(c2);
 
 
         setLayout(null);
@@ -75,6 +82,10 @@ public class IB extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==c2){
+            new trmenu();
+            setVisible(false);
+        }
 
     }
 }

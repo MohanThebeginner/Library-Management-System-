@@ -1,6 +1,5 @@
 package lms;
 
-//import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -37,10 +36,6 @@ public class AddBook extends JFrame implements ActionListener {
         l3.setFont(font);
         add(l3);
 
-//        JLabel l4  = new JLabel("Publisher");
-//        l4.setBounds(x,250,150,40);
-//        l4.setFont(font);
-//        add(l4);
 
         JLabel l5  = new JLabel("Quantity");
         l5.setBounds(x,250,150,40);
@@ -63,10 +58,6 @@ public class AddBook extends JFrame implements ActionListener {
         author.setFont(fontTxt);
         add(author);
 
-//        publisher= new JTextField();
-//        publisher.setBounds(txtX, 250,  txtWidth,txtHeight);
-//        publisher.setFont(fontTxt);
-//        add(publisher);
 
         quantity= new JTextField();
         quantity.setBounds(txtX, 250,  txtWidth,txtHeight);
@@ -89,6 +80,7 @@ public class AddBook extends JFrame implements ActionListener {
         add2.addActionListener(this);
         add(add2);
 
+
         setLayout(null);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -99,11 +91,10 @@ public class AddBook extends JFrame implements ActionListener {
         if(ae.getSource()==add){
             String bookname =  this.bookname.getText();
             String bookno = this.bookno.getText();
-//            String publisher = this.publisher.getText();
             String author = this.author.getText();
             String quantity = this.quantity.getText();
 
-//            String quantity  = (String)this.quantity.getSelectedItem();
+
             conn c = new conn();
 
             String query = "insert into book_details (Name,Sr, Author, Quantity) values ('"+bookname+"','"+bookno+"', '"+author+"','"+quantity+"');";
@@ -119,6 +110,10 @@ public class AddBook extends JFrame implements ActionListener {
 
 
 
+        }
+        if(ae.getSource()==add2){
+            new trmenu();
+            setVisible(false);
         }
 
     }

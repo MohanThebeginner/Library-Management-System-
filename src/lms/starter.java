@@ -19,18 +19,24 @@ public class starter extends JFrame implements ActionListener {
         add(l1);
 
 
-        login = new JButton("LOGIN");
-        login.setBounds(700,400,150,80);
-        login.setBackground(Color.cyan);
+        login = new JButton("LIBRARIAN LOGIN");
+        login.setBounds(700,400,200,80);
+        login.setBackground(Color.black);
+        login.setForeground(Color.white);
         login.addActionListener(this);
         add(login);
 
         studentlogin = new JButton("STUDENT LOGIN");
         studentlogin.setBounds(160,400,150,80);
-        studentlogin.setBackground(Color.green);
+        studentlogin.setBackground(Color.black);
+        studentlogin.setForeground(Color.white);
         studentlogin.addActionListener(this);
         add(studentlogin);
 
+        ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("images/a4.jpg"));
+        JLabel i3 = new JLabel(i1);
+        i3.setBounds(0,0,1000,600);
+        add(i3);
 
         setLayout(null);
         setLocationRelativeTo(null);//takes the frame to center

@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
+
 public class addLib extends JFrame implements ActionListener {
 
     int x = 40;
@@ -14,11 +14,10 @@ public class addLib extends JFrame implements ActionListener {
     Font font = new Font("Tahoma", Font.BOLD,14);
     Font fontTxt = new Font("Tahoma", Font.PLAIN,18);
 
-    JButton add,add2;
+    JButton add,add2,c2;
 
 
-    JComboBox bldGrp;
-    JTextField name,email,password,contact,address,city;
+    JTextField name,email,password,contact,address;
     addLib(){
         setSize(600,700);
         JLabel l0 = new JLabel("Add Librarin");
@@ -53,11 +52,6 @@ public class addLib extends JFrame implements ActionListener {
         l5.setFont(font);
         add(l5);
 
-//        JLabel l6  = new JLabel("City");
-//        l6.setBounds(x,370,150,40);
-//        l6.setFont(font);
-//        add(l6);
-
         name = new JTextField();
         name.setBounds(txtX, 70,  txtWidth,txtHeight);
         name.setFont(fontTxt);
@@ -83,12 +77,6 @@ public class addLib extends JFrame implements ActionListener {
         address.setFont(fontTxt);
         add(address);
 
-
-//        city = new JTextField();
-//        city.setBounds(txtX, 370,  txtWidth,txtHeight);
-//        city.setFont(fontTxt);
-//        add(city);
-
         ButtonGroup btn = new ButtonGroup();
 
         add = new JButton("Add Librarian");
@@ -105,6 +93,14 @@ public class addLib extends JFrame implements ActionListener {
         add2.addActionListener(this);
         add(add2);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("images/c3.png"));
+        Image img1 = i1.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+        i1 = new ImageIcon(img1);
+        c2 = new JButton(i1);
+        c2.setBounds(0,0 , 50,50);
+        c2.addActionListener(this);
+        add(c2);
+
         setLayout(null);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -117,7 +113,6 @@ public class addLib extends JFrame implements ActionListener {
             String password = this.password.getText();
             String email = this.email.getText();
             String contact = this.contact.getText();
-//            String city = this.city.getText();
             String address = this.address.getText();
 
 
@@ -138,12 +133,17 @@ public class addLib extends JFrame implements ActionListener {
 
 
 
+
+        }
+        if(ae.getSource()==c2){
+            new trmenu();
+            setVisible(false);
         }
 
     }
 
 
     public static void main(String[] args) {
-        new addLib();
+        new addStud();
     }
 }
